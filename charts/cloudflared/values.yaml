@@ -38,6 +38,9 @@ logLevel: info
 ## @param priorityClassName The priority class name to use for the tunnel.
 priorityClassName: ""
 
+## @param protocol The protocol implementation to connect with Cloudflare's edge network. Available protocols: 'auto' - automatically chooses the best protocol over time (the default; and also the recommended one); 'quic' - based on QUIC, relying on UDP egress to Cloudflare edge; 'http2' - using Go's HTTP2 library, relying on TCP egress to Cloudflare edge. If you want to transport gRPC traffic through this tunnel, choose 'http2' (also see https://github.com/cloudflare/cloudflared/issues/491#issuecomment-1643233485).
+protocol: auto
+
 ## @param metrics.enabled Enable metrics for prometheus monitoring. The crd monitoring.coreos.com/v1 must be already installed on the target.
 ## @param metrics.port The port to use for metrics.
 metrics:
